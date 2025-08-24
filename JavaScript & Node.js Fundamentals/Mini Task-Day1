@@ -1,0 +1,30 @@
+//To print student details from an object//
+
+let student={
+    name: "honey dey",
+    age: 21,
+    course: "B-Tech",
+    Branch: "AI&Ml",
+    grade: "A+",
+    University: "Indian Institute of technology",
+    Roll_no: 45
+};
+
+console.log("Name: ", student.name);
+console.log("Age: ", student.age);
+console.log("Course: ", student.course);
+console.log("Branch: ", student.branch);
+console.log("Grade: ", student.grade);
+console.log("University: ", student.university);
+console.log("Roll Number: ", student.Roll_no);
+
+
+Output:
+
+Name:  honey dey
+Age:  21
+Course:  B-Tech
+Branch:  undefined
+Grade:  A+
+University:  undefined
+Roll Number:  45
