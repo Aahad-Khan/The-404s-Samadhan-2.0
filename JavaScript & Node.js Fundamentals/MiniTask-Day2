@@ -1,0 +1,13 @@
+// Find highest marks from an array//
+
+let marks =[98,45,33, 23, 54, 65, 75, 78,99, 65, 67, 77, 88];
+let maximum = 0; 
+
+for(let i=0; i<marks.length; i++){
+    if(marks[i]>maximum){
+        maximum = marks[i];
+    }
+}
+console.log("The Maximum marks obtains by student is : ", maximum);
+
+Output: The Maximum marks obtains by student is :  99
