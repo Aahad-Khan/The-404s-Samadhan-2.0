@@ -1,0 +1,111 @@
+// Simple Student Marks Calculator
+
+const students = [
+  { name: 'Sparsh' , marks: [76, 89, 68] },
+  { name: 'Rahul'  , marks: [57, 34, 95] },
+  { name: 'Sneha'  , marks: [43, 90, 43] },
+  { name: 'Ahmed'  , marks: [68, 53, 89] },
+  { name: 'Garima' , marks: [31, 29, 19] } // Garima fails, scoring <27
+];
+
+const passingMarks = 27;
+
+
+const stuDetails = students.map(stu => {
+  const totalMarks = stu.marks.reduce((sum, currentMark) => sum + currentMark, 0);
+  
+
+  const didPass = stu.marks.every(mark => mark >= passingMarks);
+
+  return {
+     ...stu,
+     total: totalMarks,
+     
+     status: didPass ? 'Pass' : 'Fail'
+  };
+});
+
+
+const passingStu = stuDetails.filter(stu => stu.status === 'Pass');
+
+
+let classTopper = null;
+if (passingStu.length > 0) {
+    classTopper = passingStu.reduce((topper, currentStu) => {
+     
+        return (currentStu.total > topper.total) ? currentStu : topper;
+    });
+}
+
+console.log("Class Report Card:");
+console.table(stuDetails);
+
+console.log("\nPassing Students List:");
+console.table(passingStu);
+
+console.log("\nTopper:");
+
+console.log(classTopper ? classTopper : "No students passed the exam.");
+
+//OUtput
+Class Report Card:
+┌─────────┬──────────┬────────────────┬───────┬────────┐
+│ (index) │ name     │ marks          │ total │ status │
+├─────────┼──────────┼────────────────┼───────┼────────┤
+│ 0       │ 'Sparsh' │ [ 76, 89, 68 ] │ 233   │ 'Pass' │
+│ 1       │ 'Rahul'  │ [ 57, 34, 95 ] │ 186   │ 'Pass' │
+│ 2       │ 'Sneha'  │ [ 43, 90, 43 ] │ 176   │ 'Pass' │
+│ 3       │ 'Ahmed'  │ [ 68, 53, 89 ] │ 210   │ 'Pass' │
+│ 4       │ 'Garima' │ [ 31, 29, 19 ] │ 79    │ 'Fail' │
+└─────────┴──────────┴────────────────┴───────┴────────┘
+
+Passing Students List:
+┌─────────┬──────────┬────────────────┬───────┬────────┐
+│ (index) │ name     │ marks          │ total │ status │
+├─────────┼──────────┼────────────────┼───────┼────────┤
+│ 0       │ 'Sparsh' │ [ 76, 89, 68 ] │ 233   │ 'Pass' │
+│ 1       │ 'Rahul'  │ [ 57, 34, 95 ] │ 186   │ 'Pass' │
+│ 2       │ 'Sneha'  │ [ 43, 90, 43 ] │ 176   │ 'Pass' │
+│ 3       │ 'Ahmed'  │ [ 68, 53, 89 ] │ 210   │ 'Pass' │
+└─────────┴──────────┴────────────────┴───────┴────────┘
+
+Topper:
+{ name: 'Sparsh', marks: [ 76, 89, 68 ], total: 233, status: 'Pass' }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
