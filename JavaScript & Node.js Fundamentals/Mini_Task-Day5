@@ -1,0 +1,52 @@
+//API returning a list of Students//
+
+
+const express = require("express");
+const app = express();
+const PORT = 3000;
+
+const students = [
+  { id: 1, name: "Harsh", age: 21, course: "CS" },
+  { id: 2, name: "Aahad", age: 21, course: "AI" },
+  { id: 3, name: "Mayank", age: 22, course: "AI/ML" }
+];
+
+app.get("/", (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Student API</title>
+      </head>
+      <body>
+        <h1>Hello, Node.js API is running 🚀</h1>
+        <button onclick="loadStudents()">Show Students</button>
+        <div id="output"></div>
+
+        <script>
+          function loadStudents() {
+            fetch('/students')
+              .then(res => res.json())
+              .then(data => {
+                let html = '<ul>';
+                data.forEach(stu => {
+                  html += '<li>' + stu.name + ' (Age: ' + stu.age + ', Course: ' + stu.course + ')</li>';
+                });
+                html += '</ul>';
+                document.getElementById('output').innerHTML = html;
+              })
+              .catch(err => console.error(err));
+          }
+        </script>
+      </body>
+    </html>
+  `);
+});
+
+app.get("/students", (req, res) => {
+  res.json(students);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
