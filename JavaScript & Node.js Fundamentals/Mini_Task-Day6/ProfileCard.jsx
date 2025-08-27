@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProfileCard({ name, role, image, skills }) {
+export default function ProfileCard({ name, role, image, skills }) {
   return (
     <div className="profile-card" style={styles.card}>
       <img src={image} alt={name} style={styles.image} />
@@ -55,4 +55,5 @@ const styles = {
   },
 };
 
-export default ProfileCard;
+
+
