@@ -1,0 +1,14 @@
+{
+    "name": "notes-backend",
+    "version": "1.0.0",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "dev": "node server.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.19.2",
+        "sqlite3": "^5.1.7"
+    }
+}
