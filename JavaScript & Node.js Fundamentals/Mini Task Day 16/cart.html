@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="amazon-header">
+        <div class="logo">
+            <h1>Scamazon 🛒</h1>
+        </div>
+        <a href="index.html" class="cart-button">⬅ Back to Products</a>
+    </header>
+
+    <div id="cart-container"></div>
+
+    <script>
+        let cartIds = JSON.parse(localStorage.getItem("cart")) || [];
+        fetch("https://fakestoreapi.com/products")
+            .then(res => res.json())
+            .then(data => {
+                let filtered = data.filter(item => cartIds.includes(item.id));
+                const container = document.getElementById("cart-container");
+                if (filtered.length === 0) {
+                    container.innerHTML = "<p>Your cart is empty!</p>";
+                } else {
+                    filtered.forEach(item => {
+                        let card = document.createElement("div");
+                        card.className = "product-card";
+
+                        let imageDiv = document.createElement("div");
+                        imageDiv.className = "product-image";
+                        imageDiv.innerHTML = `<img src="${item.image}" />`;
+
+                        let titleDiv = document.createElement("div");
+                        titleDiv.className = "product-title";
+                        titleDiv.innerHTML = `<h3>${item.title}</h3>`;
+
+                        let priceDiv = document.createElement("div");
+                        priceDiv.className = "product-price";
+                        priceDiv.innerHTML = `<p>Price: $${item.price}</p>`;
+
+                        let descriptionDiv = document.createElement("div");
+                        descriptionDiv.className = "product-description";
+                        descriptionDiv.innerHTML = `<p>${item.description}</p>`;
+
+                        card.appendChild(imageDiv);
+                        card.appendChild(titleDiv);
+                        card.appendChild(priceDiv);
+                        card.appendChild(descriptionDiv);
+
+                        container.appendChild(card);
+                    });
+                }
+            });
+    </script>
+</body>
+
+</html>

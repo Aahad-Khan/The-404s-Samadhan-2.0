@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FakeStore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="amazon-header">
+    <div class="left-section">
+      <div class="logo">
+        <h1>Scamazon 🗳️</h1>
+      </div>
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search Scamazon...">
+        <button class="search-button">🔍</button>
+      </div>
+
+    </div>
+
+    <div class="right-section">
+      <select id="sort" class="sort-dropdown">
+        <option value="">Sort By</option>
+        <option value="price">Price</option>
+        <option value="name">Name</option>
+      </select>
+      <a href="cart.html" class="cart-button">
+        🛒 Cart <span id="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <div id="product-container"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
