@@ -1,0 +1,243 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f7f8fa;
+  color: #333;
+}
+
+/* Layout Wrapper */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------------- LEFT SIDEBAR ---------------- */
+.sidebar {
+  background: #1e1e2f;
+  color: #fff;
+  width: 260px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .logo {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.sidebar .menu {
+  flex: 1;
+}
+
+.sidebar .menu-item {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: #cbd5e1;
+  transition: 0.2s;
+}
+
+.sidebar .menu-item:hover,
+.sidebar .menu-item.active {
+  background: #2f2f45;
+  color: #fff;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* ---------------- MAIN CONTENT ---------------- */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.header .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.header button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #ffd54f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background: #fbc02d;
+}
+
+/* Content Layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 20px;
+}
+
+/* Members Section */
+.members {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.members h2 {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.member-item:last-child {
+  border-bottom: none;
+}
+
+.member-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.member-info img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.member-info span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.member-tasks {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Profile Section */
+.profile {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-header img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.profile-header .info h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-header .info p {
+  font-size: 14px;
+  color: #666;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+.stats span {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Assigned Tasks */
+.tasks {
+  margin-bottom: 20px;
+}
+
+.task-item {
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Activity Log */
+.activity-log h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.activity-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.activity-item p {
+  font-size: 13px;
+  color: #444;
+}
